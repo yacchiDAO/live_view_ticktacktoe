@@ -12,7 +12,7 @@ defmodule TicktacktoeWeb.GameLive do
   def render(assigns) do
     ~L"""
     <div class="game">
-      <% %Game{board: %Board{squares: squares, winner: winner, next_player: next_player}, step: step} = Enum.max_by(@histories, &(&1.step)) %>
+      <% %Game{board: %Board{squares: squares, winner: winner, next_player: next_player}} = Enum.max_by(@histories, &(&1.step)) %>
 
       <div class="game-board">
         <%= for x <- 0..(@board_length - 1) do %>

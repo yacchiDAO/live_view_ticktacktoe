@@ -8,7 +8,7 @@ defmodule Ticktacktoe.Board do
     %Board{squares: List.duplicate(Square.new_square(), length * length)}
   end
 
-  def select_point(%Board{squares: squares, next_player: player, winner: winner} = board, point) do
+  def select_point(%Board{squares: squares, next_player: player, winner: winner}, point) do
     cond do
       winner == nil ->
         case Enum.at(squares, point) do
